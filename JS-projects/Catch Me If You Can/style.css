@@ -1,0 +1,10 @@
+#box{
+    width:100px;
+    height: 100px;
+    background-color: blueviolet;
+    cursor: pointer;
+    font-size: 1.5em;
+    color:white;
+    position: fixed;
+    text-align: center;
+}

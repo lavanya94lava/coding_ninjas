@@ -1,0 +1,48 @@
+body{
+    text-align: center;
+}
+
+#heading{
+    color: grey;
+}
+
+/* .contact{
+    margin-left: 30vw;
+} */
+
+ul{
+    list-style: none;
+}
+.contact{
+    margin-left: 35vw;
+    margin-top: 1px;
+    margin-bottom:1px;
+    width:300px;
+    height: 60px;
+    background-color: aqua;
+    display: flex;
+    border: 1px solid aqua;
+    justify-content: space-evenly;
+}
+
+.details{
+    margin: 2px;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact:hover{
+    background-color: mediumaquamarine;
+}
+
+
+.contact .delete a{
+    color: black;
+    background-color: white;
+}
+
+.contact .delete a:hover{
+    background-color: red;
+}

@@ -1,0 +1,44 @@
+#header{
+    background-image: linear-gradient(to right,lightgreen,aquamarine,lightcyan);
+    height: 125px;
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#input-container {
+    font-size: 25px;
+}
+
+#input-container input{
+    height: 30px;
+    width: 200px;
+}
+
+#fetch{
+    font-size: 20px;
+    font-family: sans-serif;
+    height: 50px;
+    width: 175px;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 30px;
+    justify-content: space-around;
+}
+
+.images-container{
+    margin: 5px;
+    height: 30vh;
+    width: 25vw;
+}
+
+.images-container img{
+    height: 100%;
+    width: 100%;
+}
