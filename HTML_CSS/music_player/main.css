@@ -1,0 +1,472 @@
+body{
+	background-color: #0b1026;
+	font-family: sans-serif;
+	letter-spacing: 0.2px;
+}
+/*header-of-body*/
+
+#body-header{	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	color: white;
+	width:auto;
+	margin: 2.5% 5%;
+}
+
+/* assigning inline-block to all the div of body-header*/
+#body-header div{
+	margin:0px 10px;
+}
+
+#image-container{
+	width:20%;
+	letter-spacing: 0.8px;
+}
+
+#favourites{
+	font-weight: 300;
+	font-size: 15px;
+	width: 48%;	
+	display: flex;		
+	align-items: center;
+}
+
+#input-bar{
+	font-size: 15px;
+	color: red;
+	padding:0px 7px;
+	border-width: 0px; 
+	border-radius: 7px;
+	height: 26px;
+	width:260px;
+	background-color: #131b40;
+}
+
+::placeholder { 
+	color: #d3d3d3;
+}
+
+.bell-icon{
+	font-size: 22px;
+	margin-top: 10px;
+}
+
+.bell-icon:after{
+	content: "";
+    display: inline-block;
+    position:relative;
+    width: 6px;
+    height: 6px;	
+    bottom: 30px;
+    right: -15 px;	
+    background: red;
+    border-radius: 50%;
+}
+
+#profile-image-container{
+	position: relative;
+	margin-top: 5px;
+	margin-left: 25px;
+	height:50px;
+	width: 50px;
+}
+
+#profile-image-container img{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	border-radius: 50%;
+}
+
+
+/* main section after header which contains the discography of artist*/
+
+.content-container{
+	display: flex;
+	flex-direction: row;
+}
+
+.content-container > div{
+	margin-right: 1.5%;
+}
+
+.artist{
+	margin-left: 125px;
+	margin-bottom: 15px;
+	width:60%;
+	color: grey;
+}
+
+#artist-main-section{
+	display:flex;
+	flex-direction: row;
+	height: 325px;	
+}
+
+
+#artist-image{
+	box-shadow:inset 0 0 0 1000px rgba(0,0,255,0.7); /*this gives the shadow effect on the image along with the opacity*/
+	width:33%;
+}
+
+#artist-image img{
+	opacity: 0.7;
+	width:100%;
+	height:100%;
+}
+
+#artist-details{
+	width: 67%;
+	background-color: #131b40;	
+}
+
+#artist-container{
+	margin: 40px 30px;
+	font-size: 15px;
+	letter-spacing: 0.8px;
+}
+
+#artist-container div{
+	padding: 5px 0px;
+}
+	
+.artist-header{
+	width: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.artist-name{
+	letter-spacing: 0.8px;
+	font-size: 22px;
+	color:white;
+	font-weight: 600;
+	margin-bottom: 1%;
+}
+
+#artist-content{
+	text-align: justify;
+}
+
+
+#artist-interact{
+	margin-top: 20px;
+	width:50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between; 
+}
+
+#play-button{
+	background-image: linear-gradient(to right,purple,violet);
+	color: white;
+	letter-spacing: 0.8px;
+	border:none;
+	font-size: 20px;
+	text-align: center;
+	height: 40px;
+	width:120px;
+	}
+
+
+#follow-artist{
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+
+/* songs list of the artist*/
+
+.songs-list{
+	height:50px;
+	color: lightgrey;
+	background-color: #191e32;
+	margin:8px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.song div{
+	margin: 0 5px;
+}
+
+.song{
+	display: flex;
+	flex-direction: row;
+	width: 70%;
+}
+
+.song-number{
+	display: flex;
+	font-size: 13px;
+	align-items: center;
+}
+
+.album-image{
+	height: 30px;
+	width: 30px;
+}
+
+.shadow{
+	box-shadow: 0px 0px 7px 0px white;
+}
+
+.album-image img{
+	width: 100%;
+	height: 100%;
+	border-radius: 7%;
+}
+
+.song-duration{
+	display: flex;
+	align-items: center;
+	font-size: 13px;
+}
+
+.song-name{
+	color: white;
+	font-weight: 700;
+}
+
+.song-album{
+	font-size: 12px;
+}
+
+.like-share{
+	margin-right: 30px;
+	width: 7%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+/*this contains what you see on the right hand side of your screen*/
+
+.side-recommendations{
+	width:23%;
+	color:lightgrey;
+}
+
+.side-recommendations::-webkit-scrollbar { 
+    display: none; 
+}
+
+.mbpc1{
+	margin-top: 4%;
+	margin-bottom: 8%;
+}
+
+.fz13px{
+	margin-top: 4%;
+	font-size: 13px;
+}
+
+.similar-artists-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.song-name-album-side-bar{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.song-name-album-side-bar div{
+	margin: 10px 5px;
+
+}
+
+.album-image-side-bar{
+	height:60px;
+	width: 60px;
+
+}
+
+.album-image-side-bar img{
+	height: 100%;
+	width: 100%;
+}
+
+
+.mtpc1{
+	margin-top: 14%;
+}
+
+.recently{
+	background-color: #0b1026;
+	margin-left:auto;
+	margin-right:0;
+}
+
+
+/* in main music screen*/
+
+.fixed{
+	background-color: #0b1026;
+	left: 70%;
+	overflow-y:scroll;
+	height: 80%;
+	position: fixed;
+}
+
+
+.latest-songs-container{
+	display: flex;
+	flex-direction: row;
+	width: 90%;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.latest-release-width{
+	width: 48%;
+	margin-right: 2%;
+}
+
+
+.popular-artists-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;	
+}
+
+.popular-artists-container::-webkit-scrollbar { 
+    display: none; 
+}
+
+.artist-circle{
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.artist-circle-image{
+	margin: 0px 5px;
+	width:100px;
+	height: 100px;
+}
+
+
+.artist-circle-image img{
+	width:100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+
+.mtpc5{
+	margin-top: 5%;
+}
+
+.artist-name-footer{
+	color: white;
+	text-align: center;
+}
+
+
+.stations-container{
+	background-color: #131b40;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.stations-image-container{
+	position: relative;
+	height: 90px;
+	width: 90px;
+	display: flex;
+	align-items: center;
+}
+
+.stations-image-container img{
+	height: 90%;
+	width: 90%;
+}
+
+
+.stations-image-container p{
+	color: lightgrey;
+  	font-size: 17px;
+  	margin: 0;
+  	transform: translate(-50%,-50%);
+  	text-align: center;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+}
+
+.stations-type{
+	width: 75%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.stations-type-image-container{
+	height: 95px;
+	width: 95px;
+	display: flex;
+	align-items: center;
+}
+
+.stations-type-image-container img{
+	opacity: 0.6;
+	height: 80%;
+	width: 80%;
+	border-radius: 50%;
+}
+
+/*genre of the music div*/
+
+.genre{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.genre-image{
+	height: 100px;
+	width: 200px;
+	position: relative;
+}
+
+
+.genre-image img{
+	transition: transform 1s, filter 1.5s ease-in-out;/* in this images are initially black and white, but changes to color on hover*/
+   	filter: grayscale(100%);
+	height: 100%;
+	width: 100%;
+}
+
+.genre-image img:hover{
+	filter: grayscale(0);
+  	transform: scale(1.1);
+}
+
+.genre-image p {  /* this adds the text over image in the genre section of the page*/
+  color: white;
+  font-size: 22px;
+  transform: translate(-50%,-50%); 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.releases{
+	
+}
+
+.releases img {
+	border-radius: 0;
+}
