@@ -5,7 +5,9 @@ window.onload= function(){
 
 let container = $("#container");
 let pagination = $("#pagination");
-
+let slider = 5;
+let startSlide = 1;
+let endSlide = slider;
 let images_data = null;
 let elementsPerPage = null;
 let total_pages = null;
@@ -30,17 +32,33 @@ function getImages(){
         }
         elementsPerPage = 20;
         total_pages = photos_data.length/elementsPerPage+1;
-        for(let i =1;i<=total_pages;i++){
-            $("#pagination").append('<li><div class ="paginDiv"><a class = "newPage" href = "#">'+(i)+'</a></div></li>');
-        }
+        paginateSlide();
         showPage(currentPage);
     });
 }
 
+function paginateSlide(){
+    for(let i =startSlide;i<=endSlide;i++){
+        $("#pagination").append('<li><div class ="paginDiv"><a class = "newPage" href = "#">'+(i)+'</a></div></li>');
+    }
+}
+
+
 function showPage(pageNumber){
     container.empty();
     if(pageNumber >1){
+        startSlide = pageNumber-1;
+        if(startSlide<1){
+            startSlide = 1;
+        }
+        endSlide = pageNumber+3;
+        if(endSlide>total_pages){
+            endSlide = total_pages;
+        }
         $("#previous-button").prop("disabled",false);
+    }
+    else{
+        $("#previous-button").prop("disabled",true);
     }
 
     if(pageNumber !=parseInt(total_pages)){
@@ -63,6 +81,9 @@ function showPage(pageNumber){
 
 $("#pagination").on('click','.paginDiv',function(){
     let pageNumber = parseInt($(this).text());
+    if(pageNumber == currentPage){
+        return;
+    }
     currentPage = pageNumber;
     $(".paginDiv").removeClass("current");
     $(this).addClass("current");
@@ -70,12 +91,18 @@ $("#pagination").on('click','.paginDiv',function(){
 });
 
 $("#next-button").click(function(){
-    showPage(currentPage+1);
+    currentPage = currentPage+1;
+    $(".paginDiv").removeClass("current");
+    $($('.paginDiv')[currentPage-1]).addClass("current");
+    showPage(currentPage);
 });
 
 
 $("#previous-button").click(function(){
-    showPage(currentPage-1);
+    currentPage = currentPage-1;
+    $(".paginDiv").removeClass("current");
+    $($('.paginDiv')[currentPage-1]).addClass("current");
+    showPage(currentPage);
 });
 
 $("#fetch-button").click(getImages);
