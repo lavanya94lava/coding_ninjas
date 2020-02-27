@@ -1,0 +1,89 @@
+#header{
+    background-image: linear-gradient(to right,lightgreen,aquamarine,lightcyan);
+    height: 125px;
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#header input{
+    height: 30px;
+    width: 200px;
+}
+
+
+#paginator-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    height: 125px;
+    width:inherit;
+    background-color: lightcoral;
+}
+
+#pagination {
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#pagination li{
+    list-style: none;   
+}
+
+.paginDiv{
+    margin: 5px;
+    padding: 13px 0 4px 0;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    text-align: center;
+    list-style: none;
+    border-radius: 5px;
+}
+
+.paginDiv:hover{
+    cursor: pointer;
+    color: white;
+    background-color: green;
+}
+
+.current{
+    background-color:royalblue;
+}
+
+.paginDiv a{
+    color: black;
+    text-decoration: none;
+}
+
+button{
+    font-size: 20px;
+    font-family: sans-serif;
+    height: 50px;
+    width: 175px;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 30px;
+    justify-content: space-around;
+}
+
+.images-container{
+    margin: 5px;
+    height: 30vh;
+    width: 25vw;
+}
+
+.images-container img{
+    height: 100%;
+    width: 100%;
+}

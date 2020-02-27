@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traverse Pages of Mars Sol</title>
+    <script src = "../../jquery-3.4.1.js"></script>
+    <link rel="stylesheet" type = "text/css" href="style.css">
+</head>
+<body>
+    <div id = "header">
+            <input type="number" name="sol-number" id="sol-input" placeholder="Enter Sol(max. 1000)">
+            <!-- <input type="number" name="page-number" id="page-input" placeholder="Enter page number to display"> -->
+        <button id = "fetch-button">Get Images</button>
+    </div>
+    <div id = "paginator-container">
+        <button id = "previous-button">Previous Page</button>
+        <div id = "pagination"></div>
+        <button id = "next-button">Next Page</button>
+    </div>
+    <div id = "container"></div>
+    <script src = "script.js"></script>
+</body>
+</html>
