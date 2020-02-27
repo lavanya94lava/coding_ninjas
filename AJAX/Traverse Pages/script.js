@@ -37,13 +37,6 @@ function getImages(){
     });
 }
 
-function paginateSlide(){
-    for(let i =startSlide;i<=endSlide;i++){
-        $("#pagination").append('<li><div class ="paginDiv"><a class = "newPage" href = "#">'+(i)+'</a></div></li>');
-    }
-}
-
-
 function showPage(pageNumber){
     container.empty();
     if(pageNumber >1){
@@ -55,6 +48,7 @@ function showPage(pageNumber){
         if(endSlide>total_pages){
             endSlide = total_pages;
         }
+        paginateSlide();
         $("#previous-button").prop("disabled",false);
     }
     else{
@@ -78,6 +72,13 @@ function showPage(pageNumber){
         }
     });
 };
+
+
+function paginateSlide(){
+    for(let i =startSlide;i<=endSlide;i++){
+        $("#pagination").append('<li><div class ="paginDiv"><a class = "newPage" href = "#">'+(i)+'</a></div></li>');
+    }
+}
 
 $("#pagination").on('click','.paginDiv',function(){
     let pageNumber = parseInt($(this).text());
