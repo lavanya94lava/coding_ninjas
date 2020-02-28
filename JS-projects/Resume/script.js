@@ -33,7 +33,7 @@ function fillBars(){
     for(let bar of progressBars){
         let targetWidth = bar.getAttribute('data-bar-width');
         let currentWidth = 0;
-        let interval = setInterval(function( ){
+        let interval = setInterval(function(){
             if(currentWidth > targetWidth){
                 clearInterval(interval);
                 return;
@@ -45,7 +45,29 @@ function fillBars(){
 }
 window.addEventListener( 'scroll', checkScroll);
 
+var scrolledBar = document.getElementById("scrolled");
+var windowHeight = window.innerHeight;
+var docHeight = getDocHeight();
+var bufferedDiv = document.getElementById("buffer");
+
+
+function getDocHeight(){
+    return Math.max(document.body.scrollHeight, document.body.offsetHeight, document.body.clientHeight);
+}
+
+
+window.onresize = function(){
+    docHeight = this.getDocHeight();
+    this.windowHeight = window.innerHeight;
+}
+
 function checkScroll(){
+    var scrolled = Math.floor((window.scrollY/(docHeight-windowHeight))*100);
+    scrolledBar.innerText = scrolled;
+    if(scrolled==99){
+        scrolledBar.innerText =100;
+    }
+    bufferedDiv.style.width = scrolled+"%"; 
     var coordinates = skillsContainer.getBoundingClientRect();
     if(!animation && coordinates.top <= window.innerHeight){
         console.log('hii');
