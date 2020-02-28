@@ -1,1 +1,0 @@
-console.log("ny script is running");
