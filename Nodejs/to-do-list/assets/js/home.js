@@ -31,6 +31,17 @@ window.onload = function(){
   }
 }
 
+//add the validations on date so that no one can select a date from the past to do tasks.
+$('#task-dueDate').datepicker({ 
+  onSelect: function(dateText, inst) {
+    var today = new Date();
+    if(today>dateText){
+      alert("Please choose a date from the future and not past");
+      return;
+    }
+} 
+});
+
 
 //this function is used to initialise the select fields in our webpage.
 document.addEventListener('DOMContentLoaded', function () {

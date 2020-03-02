@@ -36,7 +36,7 @@
                     <label class="label"> category</label>
                 </div>
                 <div class="input-field col s12 m6 row_class">
-                    <input placeholder="mm//dd/yyyy" type="text" class="datepicker" name="dueDate">
+                    <input id = "task-dueDate" placeholder="yyyy-MM-dd" type= "date" name="dueDate">
                     <label for="task-date" class="label active">Task Date</label>
                 </div>
                 <div class="input-field col s12" id="button-container">
@@ -68,10 +68,10 @@
                             </div>
                             <div id="task-brief-deadline">
                                 <div id="task-brief"><%= i.task%></div>
-                                <div id="task-deadline"><%= i.dueDate%></div>
+                                <div id="task-deadline"><i class="fas fa-calendar-alt"></i>&nbsp;&nbsp;<%= i.dueDate%></div>
                             </div>
                         </div>
-                        <div id="task-chip">
+                        <div class="task-chip <%= i.category%>">
                             <%= i.category%>
                         </div>
                     </div>
