@@ -1,0 +1,128 @@
+
+/*Although we have used Materialise to style our app bur still to make it better in terms of User Experience, I have made customised CSS*/
+
+/*universal style for the whole body*/
+body{
+    background-color: darkslategrey;
+    font-family: sans-serif;
+}
+
+/*this contains the complete app outline, we are just covering a part of our page and not the whole body*/
+#to-do-container{
+    overflow: scroll;
+    position: relative;
+    left: 30%;
+    height: 370px;
+    width: 700px;
+    background-color:white;
+}
+
+/*this contains the style for TO DO APP header*/
+#name{
+    color: grey;
+    margin-top: 5px;
+    font-size: 30px;
+    text-align: center;
+    padding:10px;
+}
+
+/*border bottom for the div when it ends which contains the form to segregate it from */
+.border-bottom{
+    border-bottom:1.5px solid lightgrey;
+}
+
+
+/*this contains the outline style for the whole form*/
+#description{
+    margin-left: 10px;
+}
+
+/**/
+.label{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.6px;
+}
+
+
+/*this contains styling for each row of the form statically made*/
+.row_class:hover{
+    background-color:grey;
+}
+
+
+/*this contains styles for button, where their borders, spacing, padding are styled*/
+#button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid grey;
+}
+
+
+/*styling for all the buttons on the page*/
+button{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
+    margin: 0 10px;
+}
+
+
+/*styling for add-task button*/
+#add-task{
+    background-color:grey;
+    color: white;
+}
+
+
+/*styling for add-task button hover*/
+#add-task:hover{
+    background-color:darkgrey;
+    box-shadow: 0 0 1px 1px grey;
+}
+
+
+/*styling for delete-task button*/
+#delete-task{
+    background-color:crimson;
+    color:white;
+}
+
+/*styling for delete-task button hover*/
+#delete-task:hover{
+    background-color:darkred;
+    box-shadow: 0 0 1px 1px grey;
+}
+
+/*this contains the styling of the row in terms of spaces, padding etc*/
+#task-card{
+    border-bottom: 0.5px solid grey;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*this is for the first part of the task row rendered dynamically */
+#task-description{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/*this chip contains the styling for the category of task that you see on the right of every row*/
+#task-chip{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: cornsilk;
+    background-color: blueviolet;
+    border-radius: 5px;
+    height: 50px;
+    width: 75px;
+}

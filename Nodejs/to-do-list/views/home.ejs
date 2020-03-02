@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <div id="to-do-container">
+        <div id="name" class="border-bottom">
+            TODO App
+        </div>
+        <form action="/create-task" method="POST" id="description">
+            <div class = "row">
+                <div class="input-field col s12 row_class">
+                    <input placeholder="What do you want to Do?" type="text" name="task">
+                    <label for="task" class="label active">Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 row_class">
+                    <select name="category">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="Work">Work</option>
+                        <option value="Fitness">Fitness</option>
+                        <option value="Home">Home</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <label class="label"> category</label>
+                </div>
+                <div class="input-field col s12 m6 row_class">
+                    <input placeholder="mm//dd/yyyy" type="text" class="datepicker" name="dueDate">
+                    <label for="task-date" class="label active">Task Date</label>
+                </div>
+                <div class="input-field col s12" id="button-container">
+                    <button type="submit" id="add-task" value = "add-task">
+                        <i class="fas fa-plus"></i>
+                        Add Task
+                    </button>
+                    <button id="delete-task" value = "delete-task">
+                        <i class="fas fa-trash-alt"></i>
+                        Delete Tasks
+                    </button>
+                </div>
+            </div>
+        </form>
+        
+        <div id="tasks-container">
+            <ul>
+                <%for(let i of task_list){ %>
+                <li class = "tasks-list">
+                    <div id="task-card">
+                        <div id="task-description">
+                            <div id="checkbox">
+                                <p>
+                                    <label>
+                                        <input type="checkbox" name = "checkbox" class="delete_checkbox" value="<%= i._id%>">
+                                        <span></span>
+                                    </label>
+                                </p>
+                            </div>
+                            <div id="task-brief-deadline">
+                                <div id="task-brief"><%= i.task%></div>
+                                <div id="task-deadline"><%= i.dueDate%></div>
+                            </div>
+                        </div>
+                        <div id="task-chip">
+                            <%= i.category%>
+                        </div>
+                    </div>
+                </li>
+                <% }%>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="/js/materialize.js"></script>
+    <script type="text/javascript" src="/js/home.js"></script>
+</body>
+
+</html>
