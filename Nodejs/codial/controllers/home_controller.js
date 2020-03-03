@@ -6,5 +6,3 @@ const home = function(req,res){
 }
 
 module.exports.home = home;
-
-console.log(module);
