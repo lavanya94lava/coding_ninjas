@@ -1,3 +1,4 @@
-body{
-    text-align: center;
-}
+body {
+  text-align: left; }
+  body #layout-main {
+    height: 540px; }
