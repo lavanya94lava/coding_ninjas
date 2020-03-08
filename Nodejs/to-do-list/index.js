@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
 
 //this request posts the data on a particular route and the data that is sent is used to create our entries in database
 app.post('/create-task', function (req, res) {
-    if(req.body.task==""||req.body.category==""||req.body.dueDate==""){
+    if(req.body.task==""||req.body.category==""||req.body.dueDate==""){T
         return res.redirect('back');
     }
     Task.create({
