@@ -96,7 +96,7 @@ module.exports.statusReports = async function(req,res){
 
     if(report.length ==0){
         return res.json(200, {
-            message: "no reports found for the status " + req.params.status;
+            message: "no reports found for the status " + req.params.status
         })
     }
 
