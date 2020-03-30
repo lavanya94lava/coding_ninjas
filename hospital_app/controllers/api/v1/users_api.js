@@ -4,8 +4,12 @@ const Report = require('../../../models/report');
 const jwt = require('jsonwebtoken');
 
 module.exports.register = async function(req,res){
+    
+    console.log(req.body);
+
     if(!req.body.name||!req.body.email || !req.body.password){
-        return res.json({message:"Please fill all the required fields"});
+        
+        return res.json(200,{message:"Please fill all the required fields"});
     }
     try{
         // check email

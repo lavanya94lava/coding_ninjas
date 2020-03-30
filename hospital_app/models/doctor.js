@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     },
     patients:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'Report'
+        ref:'Patient'
     }]
 }, {
     timestamps:true
