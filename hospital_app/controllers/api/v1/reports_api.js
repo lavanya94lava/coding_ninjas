@@ -76,3 +76,34 @@ module.exports.all_reports = async function(req,res){
         });
     }
 }
+
+module.exports.statusReports = async function(req,res){
+    // check if the status is valid one , from the given array
+    if(!Report.schema.path('status').enum.includes(req.body.status)){
+        return res.json(400, {
+            message:" please give the status as from the following" + Report.schema.path('status').enum
+        })
+    }
+
+    const report = await Report.find({status:req.params.status})
+                        .sort('-createdAt')
+                        .populate({
+                            path:'doctor',
+                        })
+                        .populate({
+                            path:'patient'
+                        });
+
+    if(report.length ==0){
+        return res.json(200, {
+            message: "no reports found for the status " + req.params.status;
+        })
+    }
+
+    return res.json(200, {
+        data:{
+            reports: report,
+            status:req.params.status
+        }
+    });
+}
