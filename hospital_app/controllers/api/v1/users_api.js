@@ -97,10 +97,6 @@ module.exports.registerPatient = async function(req,res){
             phone:req.body.phone,
             doctor:req.user,
         });
-        // push the new patient into the patient array of doctors
-        doctor.patients.push(newPatient);
-        doctor.save();
-
         return res.json(200,{
             message:"Congrats!! you just created a patient"
         });

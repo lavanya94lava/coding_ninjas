@@ -13,11 +13,7 @@ const userSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true
-    },
-    patients:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Patient'
-    }]
+    }
 }, {
     timestamps:true
 });
