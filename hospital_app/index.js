@@ -9,6 +9,8 @@ const db = require('./config/mongoose');
 //use this middleware to read the urlencoded values
 app.use(express.urlencoded());
 
+//to parse all the json data coming in requests
+app.use(bodyParser.json());
 //this contains all the routes 
 app.use('/',require('./routes'));
 

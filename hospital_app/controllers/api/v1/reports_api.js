@@ -4,12 +4,6 @@ const Patient = require('../../../models/patient');
 
 // create report
 module.exports.createReport = async function(req,res){
-    // check if the status is valid one , from the given array
-    if(!Report.schema.path('status').enum.includes(req.body.status)){
-        return res.json(400, {
-            message:" please give the status as from the following" + Report.schema.path('status').enum
-        })
-    }
 
     // find patient whose report needs to be created
     let patient = await Report.findOne({_id:req.params.id});
@@ -78,13 +72,7 @@ module.exports.all_reports = async function(req,res){
 }
 
 module.exports.statusReports = async function(req,res){
-    // check if the status is valid one , from the given array
-    if(!Report.schema.path('status').enum.includes(req.body.status)){
-        return res.json(400, {
-            message:" please give the status as from the following" + Report.schema.path('status').enum
-        })
-    }
-
+    
     const report = await Report.find({status:req.params.status})
                         .sort('-createdAt')
                         .populate({

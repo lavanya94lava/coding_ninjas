@@ -4,8 +4,9 @@ const jwt = require('jsonwebtoken');
 module.exports.authenticate = function(req,res,next){
     if(req.headers.token){
         try {
-            const token = jwt.verify(req.headers.token, "hospital");
+            const token = jwt.verify(req.headers.token,"hospital");
             req.user = token._id;
+            console.log(req.user);
             next();
         } catch (err){
             return res.json(400,{
@@ -14,7 +15,7 @@ module.exports.authenticate = function(req,res,next){
         }
     }else{
         return res.json(400,{
-            message:"route is proteted"
+            message:"route is protected"
         })
     }
 }

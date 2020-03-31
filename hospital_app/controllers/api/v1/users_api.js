@@ -5,8 +5,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports.register = async function(req,res){
     
-    console.log(req.body);
-
+    
     if(!req.body.name||!req.body.email || !req.body.password){
         
         return res.json(200,{message:"Please fill all the required fields"});
@@ -46,16 +45,15 @@ module.exports.register = async function(req,res){
 
 module.exports.login = async function(req,res){
     // fill up all the details
-    if(!req.body.email || req.body.password){
+    if(!req.body.email || !req.body.password){
         return res.json(400,{
             message:"fill all fields"
         });
     }
-
     try{
         // find the doctor
         const doctor = await User.findOne({email:req.body.email});
-
+        
         // check if credential are good or not
         if(!doctor||doctor.password!= req.body.password){
             return res.json(422,{
@@ -65,9 +63,8 @@ module.exports.login = async function(req,res){
         return res.json(200,{
             message:"Sign in successful",
             //create a JSON token to verify the user later 
-            token:jwt.sign(user.toJSON(),"hospital",{expiresIn:'1h'})
+            token:jwt.sign(doctor.toJSON(),"hospital",{expiresIn:'1h'})
         });
-
     }
     catch(err){
         return res.json(500,{
@@ -85,15 +82,9 @@ module.exports.registerPatient = async function(req,res){
     }
 
     try{
-        // check if status written by the doctor is actually a valid one
-        if(!Report.schema.path('status').enum.includes(req.body.status)){
-            return res.json(400, {
-                message:" please give the status as from the following" + Report.schema.path('status').enum
-            })
-        }
         
         // find if the patient already exists or not
-        const patient = await Report.findOne({phone:req.body.phone});
+        const patient = await Patient.findOne({phone:req.body.phone});
         // return all the details if patients exsists
         if(patient){
             return res.json(200, {patient:patient});
@@ -107,7 +98,7 @@ module.exports.registerPatient = async function(req,res){
             doctor:req.user,
         });
         // push the new patient into the patient array of doctors
-        doctor.patient.push(newPatient);
+        doctor.patients.push(newPatient);
         doctor.save();
 
         return res.json(200,{
