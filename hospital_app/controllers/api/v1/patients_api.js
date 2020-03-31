@@ -6,7 +6,7 @@ const Patient = require('../../../models/patient');
 module.exports.createReport = async function(req,res){
 
     // find patient whose report needs to be created
-    let patient = await Report.findOne({_id:req.params.id});
+    let patient = await Patient.findOne({_id:req.params.id});
 
     //if no patient exist of such id then return
     if(!patient){
