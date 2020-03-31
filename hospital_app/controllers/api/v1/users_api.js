@@ -92,7 +92,7 @@ module.exports.registerPatient = async function(req,res){
         //find the doctor who is logged in
         const doctor = await User.findById({_id:req.user});
         // register a new patient
-        const newPatient = await Patient.create({
+        await Patient.create({
             name:req.body.name,
             phone:req.body.phone,
             doctor:req.user,

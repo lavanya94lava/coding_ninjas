@@ -4,7 +4,9 @@ const jwt = require('jsonwebtoken');
 module.exports.authenticate = function(req,res,next){
     if(req.headers.token){
         try {
+            //verify the token and get doctor out of it .
             const token = jwt.verify(req.headers.token,"hospital");
+            //make doctor the user
             req.user = token._id;
             console.log(req.user);
             next();
