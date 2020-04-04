@@ -1,39 +1,8 @@
 import React from 'react';
 import CartItem from './CartItem';
 
-class Cart extends React.Component {
-  constructor () {
-    super();
-    this.state = {
-      products: [
-        {
-          price: 99,
-          title: 'Watch',
-          qty: 1,
-          img: '',
-          id: 1
-        },
-        {
-          price: 999,
-          title: 'Mobile Phone',
-          qty: 10,
-          img: '',
-          id: 2
-        },
-        {
-          price: 999,
-          title: 'Laptop',
-          qty: 4,
-          img: '',
-          id: 3
-        }
-      ]
-    }
-    // this.increaseQuantity = this.increaseQuantity.bind(this);
-    // this.testing();
-  }
-  render () {
-    const { products } = this.state;
+const Cart = (props) =>{
+    const { products } = props;
     return (
       <div className="cart">
         {products.map((product) => {
@@ -41,12 +10,14 @@ class Cart extends React.Component {
             <CartItem
               product={product}
               key={product.id}
+              onIncreaseQuantity = {props.onIncreaseQuantity}
+              onDecreaseQuantity = {props.onDecreaseQuantity}
+              onDeleteProduct = {props.onDeleteProduct}
             />
           );
         })}
       </div>
     );
-  }
 }
 
 export default Cart;
