@@ -10,7 +10,7 @@ const production = {
         secure:false,
         auth:{
             user:'singhlavanya94',
-            pass:'sudharana007!',
+            pass:'',
         }
     },
     google_client_id:"812632856780-j38fkr3n1vna34tcbmqtfv14endneh5p.apps.googleusercontent.com",
